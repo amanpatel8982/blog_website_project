@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="mb-4">My Blog Posts</h1>
+
+<a href="/add" class="btn btn-primary mb-3">Add New Post</a>
+
+{% for post in posts %}
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.content }}</p>
+        <a href="/edit/{{ post.id }}" class="btn btn-warning btn-sm">Edit</a>
+        <a href="/delete/{{ post.id }}" class="btn btn-danger btn-sm">Delete</a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
